@@ -1,0 +1,221 @@
+>>------------------------- Running AIMD -------------------------
+:: Normal mode frequencies: [1184.82422133 1269.97583046 1535.90117047 1772.6968642  2937.8448467
+ 3013.59304775]
+:: trajectories = 50
+:: timestep = 15
+:: seed = 12332123
+:: total_energy = 0.0072901364046591
+:: sampled_modes = [1, 2, 3, 4, 5]
+>>--------------------------------------------------<<
+>>------------------------- Constructing DGB -------------------------
+:: use_cartesians = False
+:: use_momenta = False
+:: use_interpolation = False
+:: use_quadrature = False
+:: dipole_function = <function Molecule.get_dipole_function.<locals>.evaluate_dipole at 0x1553db1a54c0>
+:: optimize_centers = [{'method': 'energy-cutoff', 'probabilities': [[0.00045563352529119373, 5], [0.0072901364046591, 75], [0.0145802728093182, 75], [0.021870409213977298, 75]], 'cutoff': None}]
+:: kinetic_options = {'include_diagonal_contribution': True, 'include_coriolis_coupling': True, 'include_watson_term': True}
+:: coordinate_selection = [1, 2, 3, 4, 5]
+:: use_dipole_embedding = False
+::> pruning Gaussians with energies by distribution [[np.float64(100.0), 5], [np.float64(1600.0), 75], [np.float64(3200.0), 75], [np.float64(4800.0), 75]] cm-1
+  > pruned 4771 Gaussians
+<::
+>>--------------------------------------------------<<
+>>------------------------- Running DGB -------------------------
+:: similarity_cutoff = 0.9
+::> Running distributed Gaussian basis calculation
+  > getting 26565 overlap Gaussians over 1 chunks
+  ::> Evaluating kinetic energy matrix
+    > evaluating Watson diagonal momentum contribution
+    > took 0.003s
+    > evaluating moments of inertia and coriolis constants
+    > took 2.685s
+    > evaluating coriolis contribution
+    > took 0.832s
+    > evaluating Watson term contribution
+    > took 0.001s
+  <::
+  ::> Evaluating S matrix
+    > evaluating 26565 overlaps
+  <::
+  ::> Evaluating potential energy matrix
+    > evaluating integrals with 2-degree expansions about 230 points
+    > adding up all derivative contributions...
+    > took 173.994s
+  <::
+  > diagonalizing in the space of 107 S functions with a similarity of 0.9
+  > ZPE: 5168.686782723507
+  > Frequencies: [1256.08196569 1508.4060289  1759.25869821 2524.87657737 2749.98874675
+ 2797.82786709 2864.86983664 3028.50268032 3045.19193843 3278.6012618
+ 3524.58328343 3831.90205711 4016.60268648 4068.249339   4150.20253382
+ 4265.70313194 4298.31404185 4327.91691522 4413.33347642 4549.93661375
+ 4580.73172427 4597.24644492 4655.93171736 4831.37850978 4842.2847442
+ 5085.79572465 5249.55846649 5347.07636456 5373.78038182 5487.4005325
+ 5505.47123434 5543.0494416  5586.5875167  5665.55816341 5776.58167023
+ 5791.70198765 5831.19309174 5850.76666287 5887.06461507 5934.59886634
+ 6050.23699418 6083.14652723 6130.310929   6133.09322405 6327.39813948
+ 6370.19046529 6416.38675129 6491.94665012 6533.84601794 6546.03130209]
+  > evaluating integrals with 0-degree expansions about 230 points
+  > adding up all derivative contributions...
+  > took 0.096s
+  > Intensities: [1.05350663e+01 1.34050418e+00 7.79203136e+01 2.26795231e+00
+ 2.89060452e+01 5.95603675e+01 5.64457873e+01 6.60573390e-01
+ 6.47437936e+00 3.80264771e-01 8.15152094e-01 1.28219016e-03
+ 4.36979704e-03 1.60929440e-03 6.83673629e-02 8.97649828e-02
+ 6.10424415e-03 8.02871340e-03 2.00686589e-01 5.58083850e-04
+ 1.46457383e-02 5.64959682e-04 5.24193570e-02 1.19297841e-03
+ 7.57018492e-03 1.89888900e-03 2.00428192e-02 2.43124486e-01
+ 9.01922987e-02 6.79601370e-01 9.43236280e-01 7.08571977e-01
+ 1.11585167e+00 1.00620653e-01 2.80215439e-02 8.62422119e-02
+ 3.70603759e-03 2.32153150e-02 8.44741499e-04 3.67861508e-03
+ 1.12707102e-03 2.73543791e-04 7.92388511e-04 8.46894604e-03
+ 2.65902559e-03 5.96332141e-03 2.90535126e-03 6.83928709e-03
+ 1.11921296e-02 9.74865569e-03]
+<::
+::> Plotting wavefunctions
+  > which = 15
+  > cartesians = True
+  > coordinate_sel = [1, 2]
+  > potential_units = Wavenumbers
+  > plot_dir = ochh/submodes_all_12345_relaxed_more/submodes_all_12345_relaxed_more_100_5_1600_75_3200_75_4800_75
+  > contour_levels = 10
+  > cmap = coolwarm
+  > plot_points = 200
+  > plot_centers = {'color': 'red'}
+  > domain = [[-3, 3], [-3.25, 2.25]]
+  > domain_padding = 0
+  > plot_potential = True
+  > scaling = None
+  > plotter = <class 'McUtils.Plots.Plots.TriContourLinesPlot'>
+  > potential_styles = {'domain': [[-3, 3], [-3.25, 2.25]], 'domain_padding': 0, 'cmap': 'Greys_r', 'plot_points': 350}
+  > plot_range = [[-3, 3], [-3.25, 2.25]]
+  > axes_labels = ['$x$ (bohr)', '$y$ (bohr)']
+  > background = None
+  > frame = True
+  > aspect_ratio = auto
+  > image_size = [500, 500]
+  > padding = ([60, 20], [40, 30])
+  > ticks = ([-2, -1, 0, 1, 2], [-2, -1, 0, 1, 2])
+  > separate_potential = True
+<::
+>>--------------------------------------------------<<
+>>------------------------- Running AIMD -------------------------
+:: Normal mode frequencies: [1184.82422133 1269.97583046 1535.90117047 1772.6968642  2937.8448467
+ 3013.59304775]
+:: trajectories = 50
+:: timestep = 15
+:: seed = 12332123
+:: total_energy = 0.0072901364046591
+:: sampled_modes = [1, 2, 3, 4, 5]
+>>--------------------------------------------------<<
+>>------------------------- Constructing DGB -------------------------
+:: use_cartesians = False
+:: use_momenta = False
+:: use_interpolation = False
+:: use_quadrature = False
+:: dipole_function = <function Molecule.get_dipole_function.<locals>.evaluate_dipole at 0x1553f0044160>
+:: use_dipole_embedding = False
+:: optimize_centers = [{'method': 'energy-cutoff', 'probabilities': [[0.00045563352529119373, 5], [0.0072901364046591, 75], [0.0145802728093182, 75], [0.021870409213977298, 75]], 'cutoff': None}]
+:: coordinate_selection = [1, 2, 3, 4, 5]
+:: kinetic_options = {'include_diagonal_contribution': True, 'include_coriolis_coupling': True, 'include_watson_term': True}
+>>------------------------- Running AIMD -------------------------
+:: Normal mode frequencies: [1184.82422133 1269.97583046 1535.90117047 1772.6968642  2937.8448467
+ 3013.59304775]
+:: trajectories = 50
+:: timestep = 15
+:: seed = 12332123
+:: total_energy = 0.0072901364046591
+:: sampled_modes = [1, 2, 3, 4, 5]
+>>--------------------------------------------------<<
+>>------------------------- Constructing DGB -------------------------
+:: use_cartesians = False
+:: use_momenta = False
+:: use_interpolation = False
+:: use_quadrature = False
+:: dipole_function = <function Molecule.get_dipole_function.<locals>.evaluate_dipole at 0x1553a4ac3040>
+:: kinetic_options = {'include_diagonal_contribution': True, 'include_coriolis_coupling': True, 'include_watson_term': True}
+:: use_dipole_embedding = False
+:: optimize_centers = [{'method': 'energy-cutoff', 'probabilities': [[0.00045563352529119373, 5], [0.0072901364046591, 75], [0.0145802728093182, 75], [0.021870409213977298, 75]], 'cutoff': None}]
+:: coordinate_selection = [1, 2, 3, 4, 5]
+::> pruning Gaussians with energies by distribution [[np.float64(100.0), 5], [np.float64(1600.0), 75], [np.float64(3200.0), 75], [np.float64(4800.0), 75]] cm-1
+  > pruned 4771 Gaussians
+<::
+>>--------------------------------------------------<<
+>>------------------------- Running DGB -------------------------
+:: similarity_cutoff = 0.9
+::> Running distributed Gaussian basis calculation
+  > getting 26565 overlap Gaussians over 1 chunks
+  ::> Evaluating kinetic energy matrix
+    > evaluating Watson diagonal momentum contribution
+    > took 0.004s
+    > evaluating moments of inertia and coriolis constants
+    > took 1.240s
+    > evaluating coriolis contribution
+    > took 3.388s
+    > evaluating Watson term contribution
+    > took 0.001s
+  <::
+  ::> Evaluating S matrix
+    > evaluating 26565 overlaps
+  <::
+  ::> Evaluating potential energy matrix
+    > evaluating integrals with 2-degree expansions about 230 points
+    > adding up all derivative contributions...
+    > took 174.709s
+  <::
+  > diagonalizing in the space of 107 S functions with a similarity of 0.9
+  > ZPE: 5168.686782723507
+  > Frequencies: [1256.08196569 1508.4060289  1759.25869821 2524.87657737 2749.98874675
+ 2797.82786709 2864.86983664 3028.50268032 3045.19193843 3278.6012618
+ 3524.58328343 3831.90205711 4016.60268648 4068.249339   4150.20253382
+ 4265.70313194 4298.31404185 4327.91691522 4413.33347642 4549.93661375
+ 4580.73172427 4597.24644492 4655.93171736 4831.37850978 4842.2847442
+ 5085.79572465 5249.55846649 5347.07636456 5373.78038182 5487.4005325
+ 5505.47123434 5543.0494416  5586.5875167  5665.55816341 5776.58167023
+ 5791.70198765 5831.19309174 5850.76666287 5887.06461507 5934.59886634
+ 6050.23699418 6083.14652723 6130.310929   6133.09322405 6327.39813948
+ 6370.19046529 6416.38675129 6491.94665012 6533.84601794 6546.03130209]
+  > evaluating integrals with 0-degree expansions about 230 points
+  > adding up all derivative contributions...
+  > took 0.015s
+  > Intensities: [1.05350663e+01 1.34050418e+00 7.79203136e+01 2.26795231e+00
+ 2.89060452e+01 5.95603675e+01 5.64457873e+01 6.60573390e-01
+ 6.47437936e+00 3.80264771e-01 8.15152094e-01 1.28219016e-03
+ 4.36979704e-03 1.60929440e-03 6.83673629e-02 8.97649828e-02
+ 6.10424415e-03 8.02871340e-03 2.00686589e-01 5.58083850e-04
+ 1.46457383e-02 5.64959682e-04 5.24193570e-02 1.19297841e-03
+ 7.57018492e-03 1.89888900e-03 2.00428192e-02 2.43124486e-01
+ 9.01922987e-02 6.79601370e-01 9.43236280e-01 7.08571977e-01
+ 1.11585167e+00 1.00620653e-01 2.80215439e-02 8.62422119e-02
+ 3.70603759e-03 2.32153150e-02 8.44741499e-04 3.67861508e-03
+ 1.12707102e-03 2.73543791e-04 7.92388511e-04 8.46894604e-03
+ 2.65902559e-03 5.96332141e-03 2.90535126e-03 6.83928709e-03
+ 1.11921296e-02 9.74865569e-03]
+<::
+::> Plotting wavefunctions
+  > which = 50
+  > cartesians = True
+  > coordinate_sel = [1, 2]
+  > potential_units = Wavenumbers
+  > plot_dir = ochh/submodes_all_12345_relaxed_more/submodes_all_12345_relaxed_more_100_5_1600_75_3200_75_4800_75
+  > contour_levels = 10
+  > cmap = coolwarm
+  > plot_points = 200
+  > plot_centers = {'color': 'red'}
+  > domain = [[-3, 3], [-3.25, 2.25]]
+  > domain_padding = 0
+  > plot_potential = True
+  > scaling = None
+  > plotter = <class 'McUtils.Plots.Plots.TriContourLinesPlot'>
+  > potential_styles = {'domain': [[-3, 3], [-3.25, 2.25]], 'domain_padding': 0, 'cmap': 'Greys_r', 'plot_points': 350}
+  > padding = ([60, 20], [40, 30])
+  > frame = True
+  > image_size = [500, 500]
+  > background = None
+  > axes_labels = ['$x$ (bohr)', '$y$ (bohr)']
+  > ticks = ([-2, -1, 0, 1, 2], [-2, -1, 0, 1, 2])
+  > separate_potential = True
+  > aspect_ratio = auto
+  > plot_range = [[-3, 3], [-3.25, 2.25]]
+<::
+>>--------------------------------------------------<<
